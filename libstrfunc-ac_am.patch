@@ -1,7 +1,7 @@
 diff -Nur libstrfunc-7.1.0/Makefile.in libstrfunc-7.1.0.new/Makefile.in
 --- libstrfunc-7.1.0/Makefile.in	Tue May 15 17:20:31 2001
 +++ libstrfunc-7.1.0.new/Makefile.in	Sun May 20 18:02:12 2001
-@@ -73,11 +73,12 @@
+@@ -73,11 +73,13 @@
  	@echo "Istalling the library and header files..."
  
  install-lib: echo-ilib
@@ -10,7 +10,8 @@ diff -Nur libstrfunc-7.1.0/Makefile.in libstrfunc-7.1.0.new/Makefile.in
 -	$(LIBTOOL) ${INSTALL} -m 444 ./.libs/${SHLIB_NAME} ${libdir}
 -	${LN_SF} ${SHLIB_NAME} ${libdir}/${SHLIB_LINK}
 -	${INSTALL} -m 444 strfunc.h ${includedir}
-+	install -d $(DESTDIR)${libdir}
++	install -d $(DESTDIR)${libdir} 
++	install -d $(DESTDIR)${includedir}
 +	$(LIBTOOL) ${INSTALL} -m 444 ./.libs/lib${LIB}.a $(DESTDIR)${libdir}
 +	rm -f $(DESTDIR)${libdir}/${SHLIB_NAME} $(DESTDIR)${libdir}/${SHLIB_LINK}
 +	$(LIBTOOL) ${INSTALL} -m 444 ./.libs/${SHLIB_NAME} $(DESTDIR)${libdir}
