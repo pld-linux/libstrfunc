@@ -11,13 +11,12 @@ URL:		http://www.spelio.net.ru/soft/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Handy library for manipulating strings, string arrays, buffers, CGI forms,
-config files et cetera.
-Handles base64, quoted-printable, url_encode, mime-words and other encoded 
-data.
+Handy library for manipulating strings, string arrays, buffers, CGI
+forms, config files et cetera. Handles base64, quoted-printable,
+url_encode, mime-words and other encoded data.
 
 %description -l pl
-Porêczna biblioteka do manipulowania stringami, tablicami, buforami, 
+Porêczna biblioteka do manipulowania stringami, tablicami, buforami,
 formularzami CGI, plikami konfiguracyjnymi et cetera.
 
 %package devel
@@ -29,7 +28,7 @@ Requires:	%{name} = %{version}
 %description devel
 Header files and development documentation for libstrfunc.
 
-%description -l pl devel
+%description devel -l pl
 Pliki nag³ówkowe i dokumentacja do libstrfunc.
 
 %package static
@@ -41,7 +40,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 Static library.
 
-%description -l pl static
+%description static -l pl
 Biblioteka statyczna.
 
 %prep
