@@ -54,7 +54,7 @@ Biblioteka statyczna.
 rm -f missing
 cp -f /usr/share/automake/config.* .
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
