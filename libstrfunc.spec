@@ -5,9 +5,10 @@ Version:	7.4.7
 Release:	1
 License:	BSD-like
 Group:		Libraries
+# new version at http://www.lionet.info/soft/
 Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
 # Source0-md5:	7966dbda3a65ecef19b06861b766e74b
-URL:		http://www.spelio.net.ru/soft/
+URL:		http://www.lionet.info/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
