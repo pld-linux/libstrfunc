@@ -5,8 +5,6 @@ Version:	7.1.0
 Release:	1
 License:	BSD like
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_am.patch
 URL:		http://www.spelio.net.ru/soft/
@@ -26,13 +24,6 @@ formularzami CGI, plikami konfiguracyjnymi et cetera.
 Summary:	Header files and development documentation for libstrfunc
 Summary(pl):	Pliki nagЁСwkowe i dokumentacja do libstrfunc
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -45,13 +36,6 @@ Pliki nagЁСwkowe i dokumentacja do libstrfunc.
 Summary:	libstrfunc - static library
 Summary(pl):	libstrfunc - biblioteka statyczna
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
