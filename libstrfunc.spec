@@ -1,13 +1,12 @@
 Summary:	libstrfunc - library for manipulating strings
 Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
 Name:		libstrfunc
-Version:	7.1.0
-Release:	3
+Version:	7.4.7
+Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
-# Source0-md5:	72142897b2192ae57f925877c94772d7
-Patch0:		%{name}-ac_am.patch
+# Source0-md5:	7966dbda3a65ecef19b06861b766e74b
 URL:		http://www.spelio.net.ru/soft/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -27,7 +26,7 @@ formularzami CGI, plikami konfiguracyjnymi et cetera.
 Summary:	Header files and development documentation for libstrfunc
 Summary(pl):	Pliki nag³ówkowe i dokumentacja do libstrfunc
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files and development documentation for libstrfunc.
@@ -39,7 +38,7 @@ Pliki nag³ówkowe i dokumentacja do libstrfunc.
 Summary:	libstrfunc - static library
 Summary(pl):	libstrfunc - biblioteka statyczna
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static library.
@@ -49,14 +48,13 @@ Biblioteka statyczna.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-rm -f missing
-cp -f /usr/share/automake/config.* .
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
@@ -66,22 +64,28 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+# don't include "aliases" (copies of base manuals) as they have too common names
+rm -f $RPM_BUILD_ROOT%{_mandir}/man3/{[!s],s[!ft],sf[!_],str[!f],strfunc_ctl}*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS COPYING ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc README AUTHORS COPYRIGHT ChangeLog
-%{_libdir}/*.so
+%attr(755,root,root) %{_libdir}/*.so
+%{_libdir}/*.la
 %{_includedir}/*.h
+%{_mandir}/man3/strfunc.3*
+%{_mandir}/man3/sf_*.3*
 
 %files static
 %defattr(644,root,root,755)
