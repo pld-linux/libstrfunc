@@ -2,7 +2,7 @@ Summary:	libstrfunc - library for manipulating strings
 Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
 Name:		libstrfunc
 Version:	7.1.0
-Release:	1
+Release:	2
 License:	BSD-like
 Group:		Applications/System
 Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
