@@ -2,12 +2,15 @@ Summary:	libstrfunc - library for manipulating strings
 Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
 Name:		libstrfunc
 Version:	7.1.0
-Release:	2
+Release:	3
 License:	BSD-like
-Group:		Applications/System
+Group:		Libraries
 Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
 Patch0:		%{name}-ac_am.patch
 URL:		http://www.spelio.net.ru/soft/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,7 +51,12 @@ Biblioteka statyczna.
 %patch0 -p1
 
 %build
-%configure2_13
+rm -f missing
+cp -f /usr/share/automake/config.* .
+%{__libtoolize}
+aclocal
+%{__autoconf}
+%configure
 %{__make}
 
 %install
@@ -56,8 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf README AUTHORS COPYRIGHT ChangeLog
 
 %post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -72,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README AUTHORS COPYRIGHT ChangeLog
 %{_libdir}/*.so
 %{_includedir}/*.h
 
