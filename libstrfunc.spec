@@ -3,7 +3,7 @@ Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
 Name:		libstrfunc
 Version:	7.1.0
 Release:	1
-License:	???
+License:	BSD like
 Group:		Applications/System
 Group(de):	Applikationen/System
 Group(pl):	Aplikacje/System
@@ -50,7 +50,7 @@ Requires:	%{name}-devel = %{version}
 Static library.
 
 %description -l pl static
-Biblioteka statyczna
+Biblioteka statyczna.
 
 %prep
 %setup -q
@@ -76,8 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/lib*.so.*
 
 %files devel
 %defattr(644,root,root,755)
