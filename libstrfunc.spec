@@ -6,6 +6,7 @@ Release:	3
 License:	BSD-like
 Group:		Libraries
 Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
+# Source0-md5:	72142897b2192ae57f925877c94772d7
 Patch0:		%{name}-ac_am.patch
 URL:		http://www.spelio.net.ru/soft/
 BuildRequires:	autoconf
