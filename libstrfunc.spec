@@ -1,13 +1,16 @@
+# Conditional build:
+%bcond_without	static_libs # don't build static libraries
+#
 Summary:	libstrfunc - library for manipulating strings
 Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
 Name:		libstrfunc
-Version:	7.4.7
-Release:	1
+Version:	8.2
+Release:	0.1
 License:	BSD-like
 Group:		Libraries
-# new version at http://www.lionet.info/soft/
-Source0:	http://www.spelio.net.ru/soft/%{name}-%{version}.tar.gz
-# Source0-md5:	7966dbda3a65ecef19b06861b766e74b
+Source0:	http://www.lionet.info/soft/%{name}-%{version}.tar.gz
+# Source0-md5:	f048a3140e811e8eb7d9ca20005ce76a
+Patch0:		%{name}-am_no_all_static.patch
 URL:		http://www.lionet.info/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -49,6 +52,7 @@ Biblioteka statyczna.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -56,7 +60,8 @@ Biblioteka statyczna.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--enable-static=no}
 %{__make}
 
 %install
@@ -88,6 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man3/strfunc.3*
 %{_mandir}/man3/sf_*.3*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/*.a
+%endif
