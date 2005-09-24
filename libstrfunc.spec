@@ -5,7 +5,7 @@ Summary:	libstrfunc - library for manipulating strings
 Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
 Name:		libstrfunc
 Version:	8.2
-Release:	0.1
+Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	http://www.lionet.info/soft/%{name}-%{version}.tar.gz
