@@ -1,8 +1,9 @@
+#
 # Conditional build:
-%bcond_without	static_libs # don't build static libraries
+%bcond_without	static_libs	# don't build static libraries
 #
 Summary:	libstrfunc - library for manipulating strings
-Summary(pl):	libstrfunc - biblioteka do manipulowania stringami
+Summary(pl):	libstrfunc - biblioteka do operacji na ³añcuchach znaków
 Name:		libstrfunc
 Version:	8.2
 Release:	1
@@ -23,8 +24,10 @@ forms, config files et cetera. Handles base64, quoted-printable,
 url_encode, mime-words and other encoded data.
 
 %description -l pl
-Porêczna biblioteka do manipulowania stringami, tablicami, buforami,
-formularzami CGI, plikami konfiguracyjnymi et cetera.
+Porêczna biblioteka do operacji na ³añcuchach znaków, tablicach,
+buforach, formularzach CGI, plikach konfiguracyjnych itp. Obs³uguje
+dane kodowane base64, quoted-printable, url_encode, MIME i w inny
+sposób.
 
 %package devel
 Summary:	Header files and development documentation for libstrfunc
