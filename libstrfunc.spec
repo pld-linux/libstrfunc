@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static libraries
 #
 Summary:	libstrfunc - library for manipulating strings
-Summary(pl):	libstrfunc - biblioteka do operacji na 砤馽uchach znak體
+Summary(pl.UTF-8):   libstrfunc - biblioteka do operacji na 艂a艅cuchach znak贸w
 Name:		libstrfunc
 Version:	8.2
 Release:	1
@@ -23,34 +23,34 @@ Handy library for manipulating strings, string arrays, buffers, CGI
 forms, config files et cetera. Handles base64, quoted-printable,
 url_encode, mime-words and other encoded data.
 
-%description -l pl
-Por阠zna biblioteka do operacji na 砤馽uchach znak體, tablicach,
-buforach, formularzach CGI, plikach konfiguracyjnych itp. Obs硊guje
+%description -l pl.UTF-8
+Por臋czna biblioteka do operacji na 艂a艅cuchach znak贸w, tablicach,
+buforach, formularzach CGI, plikach konfiguracyjnych itp. Obs艂uguje
 dane kodowane base64, quoted-printable, url_encode, MIME i w inny
-spos骲.
+spos贸b.
 
 %package devel
 Summary:	Header files and development documentation for libstrfunc
-Summary(pl):	Pliki nag丑wkowe i dokumentacja do libstrfunc
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe i dokumentacja do libstrfunc
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files and development documentation for libstrfunc.
 
-%description devel -l pl
-Pliki nag丑wkowe i dokumentacja do libstrfunc.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe i dokumentacja do libstrfunc.
 
 %package static
 Summary:	libstrfunc - static library
-Summary(pl):	libstrfunc - biblioteka statyczna
+Summary(pl.UTF-8):   libstrfunc - biblioteka statyczna
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteka statyczna.
 
 %prep
