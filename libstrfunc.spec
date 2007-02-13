@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static libraries
 #
 Summary:	libstrfunc - library for manipulating strings
-Summary(pl.UTF-8):   libstrfunc - biblioteka do operacji na łańcuchach znaków
+Summary(pl.UTF-8):	libstrfunc - biblioteka do operacji na łańcuchach znaków
 Name:		libstrfunc
 Version:	8.2
 Release:	1
@@ -31,7 +31,7 @@ sposób.
 
 %package devel
 Summary:	Header files and development documentation for libstrfunc
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja do libstrfunc
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja do libstrfunc
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -43,7 +43,7 @@ Pliki nagłówkowe i dokumentacja do libstrfunc.
 
 %package static
 Summary:	libstrfunc - static library
-Summary(pl.UTF-8):   libstrfunc - biblioteka statyczna
+Summary(pl.UTF-8):	libstrfunc - biblioteka statyczna
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
